@@ -1,1 +1,1 @@
-# Minicurso-de-An-lise-de-Dados-para-Acompanhamento-Pedag-gico-na-EAD
+# Minicurso de Análise de Dados para Acompanhamento Pedagógico na EAD
