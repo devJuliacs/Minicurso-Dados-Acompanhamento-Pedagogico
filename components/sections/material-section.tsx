@@ -6,7 +6,6 @@ export function MaterialSection() {
   return (
     <Section
       id="material"
-      step={3}
       eyebrow="Prática"
       title="Material de apoio"
       description="Baixe a planilha com os dados de exemplo e pratique no Google Sheets. Para abrir: acesse o Google Drive, envie o arquivo e escolha “Abrir com Planilhas Google”."

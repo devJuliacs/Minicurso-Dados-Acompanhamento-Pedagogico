@@ -4,8 +4,7 @@ import { AboutSection } from "@/components/sections/about-section"
 import { EvaluationSection } from "@/components/sections/evaluation-section"
 import { HeroSection } from "@/components/sections/hero-section"
 import { MaterialSection } from "@/components/sections/material-section"
-import { ObjectivesSection } from "@/components/sections/objectives-section"
-import { PrerequisitesSection } from "@/components/sections/prerequisites-section"
+import { ReferencesSection } from "@/components/sections/references-section"
 import { StudyPathSection } from "@/components/sections/study-path-section"
 import { VideoSection } from "@/components/sections/video-section"
 
@@ -22,12 +21,11 @@ export default function Home() {
       <main id="conteudo">
         <HeroSection />
         <AboutSection />
-        <ObjectivesSection />
-        <PrerequisitesSection />
         <StudyPathSection />
         <VideoSection />
         <MaterialSection />
         <EvaluationSection />
+        <ReferencesSection />
       </main>
       <SiteFooter />
     </>

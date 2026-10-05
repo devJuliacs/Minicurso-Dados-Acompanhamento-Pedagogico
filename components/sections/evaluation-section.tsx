@@ -7,7 +7,7 @@ export function EvaluationSection() {
   return (
     <Section
       id="avaliacao"
-      step={4}
+      step={3}
       eyebrow="Conclusão"
       title="Avaliação"
       description="Depois de assistir ao vídeo e praticar com o material, responda à avaliação para concluir o minicurso."

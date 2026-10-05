@@ -24,18 +24,20 @@ export const course = {
  *   /public/material/ com o nome abaixo, ou cole um link externo de download.
  */
 export const links = {
-  youtubeUrl: "",
+  youtubeUrl: "https://www.youtube.com/watch?v=VAw1TzvYaGU",
   evaluationUrl: "",
   supportMaterialUrl: "/material/material-de-apoio.xlsx",
   supportMaterialFileName: "material-de-apoio.xlsx",
 }
 
-/** Itens da barra de navegação. O "id" deve ser igual ao id da seção. */
+/**
+ * Itens da barra de navegação. O "id" deve ser igual ao id da seção.
+ * "Objetivos" e "Pré-requisitos" não têm item próprio: seu conteúdo está
+ * dentro da seção "sobre".
+ */
 export const navItems = [
   { id: "inicio", label: "Início" },
   { id: "sobre", label: "Sobre" },
-  { id: "objetivos", label: "Objetivos" },
-  { id: "pre-requisitos", label: "Pré-requisitos" },
   { id: "trilha", label: "Trilha de estudo" },
   { id: "video", label: "Vídeo" },
   { id: "material", label: "Material" },
@@ -77,22 +79,16 @@ export const prerequisites = [
 /** Sequência de estudo recomendada, exibida na seção "Trilha de estudo". */
 export const studySteps = [
   {
-    title: "Conheça o minicurso",
+    title: "Conheça o curso",
     description:
       "Leia a apresentação, os objetivos e os pré-requisitos para entender o que será trabalhado.",
     targetId: "sobre",
   },
   {
-    title: "Assista à videoaula",
+    title: "Assista ao vídeo",
     description:
       "Acompanhe a explicação passo a passo sobre organização, visualização e interpretação dos dados.",
     targetId: "video",
-  },
-  {
-    title: "Pratique com o material de apoio",
-    description:
-      "Baixe a planilha .xlsx, abra no Google Sheets e reproduza os exemplos apresentados no vídeo.",
-    targetId: "material",
   },
   {
     title: "Realize a avaliação",
@@ -100,4 +96,16 @@ export const studySteps = [
       "Responda à avaliação para consolidar a aprendizagem e concluir o minicurso.",
     targetId: "avaliacao",
   },
+]
+
+/**
+ * Referências bibliográficas, exibidas ao final da página.
+ * Para adicionar uma referência, copie uma linha e altere o texto.
+ */
+export const references = [
+  "GARRISON, D. R.; ANDERSON, T.; ARCHER, W. Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education. The Internet and Higher Education, v. 2, n. 2-3, p. 87-105, 1999.",
+  "MOORE, M. G.; KEARSLEY, G. Educação a Distância: Uma visão integrada. São Paulo: Cengage Learning, 2010.",
+  "SIEMENS, G.; LONG, P. Penetrating the Fog: Analytics in Learning and Education. EDUCAUSE Review, v. 46, n. 5, p. 30-32, 2011.",
+  "TINTO, V. Leaving College: Rethinking the Causes and Cures of Student Attrition. 2. ed. Chicago: University of Chicago Press, 1993.",
+  "UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE (UFRN). Repositório Institucional da UFRN. Documento técnico/acadêmico sobre acompanhamento em EaD. Disponível em: https://repositorio.ufrn.br/server/api/core/bitstreams/c10f03ee-8619-4305-9d8d-4175d771d57d/content. Acesso em: 2026.",
 ]

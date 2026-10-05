@@ -33,7 +33,7 @@ export function HeroSection() {
               href="#sobre"
               className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-lg font-bold text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
             >
-              Começar
+              Conheça o curso
               <ArrowRight className="size-5" aria-hidden="true" />
             </a>
             <a
