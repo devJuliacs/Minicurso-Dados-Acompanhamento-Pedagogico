@@ -20,12 +20,14 @@ export const course = {
  * - youtubeUrl: cole o link do vídeo (ex.: https://www.youtube.com/watch?v=XXXX
  *   ou https://youtu.be/XXXX). Enquanto estiver vazio, a página mostra um aviso.
  * - evaluationUrl: cole o link da avaliação (Google Forms, Moodle etc.).
+ * - ebookUrl: link do e-book do curso (aparece na seção "Material de apoio").
  * - supportMaterialUrl: caminho do arquivo .xlsx. Coloque o arquivo na pasta
  *   /public/material/ com o nome abaixo, ou cole um link externo de download.
  */
 export const links = {
   youtubeUrl: "https://www.youtube.com/watch?v=VAw1TzvYaGU",
   evaluationUrl: "",
+  ebookUrl: "https://online.fliphtml5.com/gwranp/ntpy/",
   supportMaterialUrl: "/material/material-de-apoio.xlsx",
   supportMaterialFileName: "material-de-apoio.xlsx",
 }
@@ -95,6 +97,12 @@ export const studySteps = [
     description:
       "Responda à avaliação para consolidar a aprendizagem e concluir o minicurso.",
     targetId: "avaliacao",
+  },
+  {
+    title: "Verifique os materiais de apoio",
+    description:
+      "Consulte a planilha de apoio (.xlsx) e o e-book do curso para praticar e aprofundar o que foi estudado.",
+    targetId: "material",
   },
 ]
 
