@@ -1,0 +1,147 @@
+diff --git a/components/sections/material-section.tsx b/components/sections/material-section.tsx
+index feaffc1..1f119a5 100644
+--- a/components/sections/material-section.tsx
++++ b/components/sections/material-section.tsx
+@@ -1,38 +1,75 @@
+-import { Download, FileSpreadsheet } from "lucide-react"
++import { BookOpen, Download, ExternalLink, FileSpreadsheet } from "lucide-react"
+ import { Section } from "@/components/section"
+ import { links } from "@/lib/course-content"
+ 
++const cardClass =
++  "flex flex-col gap-6 rounded-xl border border-border bg-card p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6 md:p-8"
++const buttonClass =
++  "inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-lg font-bold text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
++
+ export function MaterialSection() {
+   return (
+     <Section
+       id="material"
+       eyebrow="Prática"
+       title="Material de apoio"
+-      description="Baixe a planilha com os dados de exemplo e pratique no Google Sheets. Para abrir: acesse o Google Drive, envie o arquivo e escolha “Abrir com Planilhas Google”."
++      description="Baixe a planilha com os dados de exemplo e consulte o e-book do curso. Para abrir a planilha: acesse o Google Drive, envie o arquivo e escolha “Abrir com Planilhas Google”."
+       tone="muted"
+     >
+-      <div className="flex flex-col gap-6 rounded-xl border border-border bg-card p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6 md:p-8">
+-        <div className="flex min-w-0 items-center gap-4">
+-          <span className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-secondary">
+-            <FileSpreadsheet className="size-8 text-primary" aria-hidden="true" />
+-          </span>
+-          <div className="min-w-0">
+-            <p className="break-words text-lg font-bold text-foreground">
+-              {links.supportMaterialFileName}
+-            </p>
+-            <p className="text-base text-muted-foreground">
+-              Planilha Excel (.xlsx) compatível com Google Sheets
+-            </p>
++      <div className="flex flex-col gap-4">
++        {/* Planilha de apoio */}
++        <div className={cardClass}>
++          <div className="flex min-w-0 items-center gap-4">
++            <span className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-secondary">
++              <FileSpreadsheet className="size-8 text-primary" aria-hidden="true" />
++            </span>
++            <div className="min-w-0">
++              <p className="break-words text-lg font-bold text-foreground">
++                {links.supportMaterialFileName}
++              </p>
++              <p className="text-base text-muted-foreground">
++                Planilha Excel (.xlsx) compatível com Google Sheets
++              </p>
++            </div>
+           </div>
++          <a
++            href={links.supportMaterialUrl}
++            download={links.supportMaterialFileName}
++            className={buttonClass}
++          >
++            <Download className="size-5" aria-hidden="true" />
++            Baixar material
++          </a>
+         </div>
+-        <a
+-          href={links.supportMaterialUrl}
+-          download={links.supportMaterialFileName}
+-          className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-lg font-bold text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
+-        >
+-          <Download className="size-5" aria-hidden="true" />
+-          Baixar material
+-        </a>
++
++        {/* E-book do curso */}
++        {links.ebookUrl && (
++          <div className={cardClass}>
++            <div className="flex min-w-0 items-center gap-4">
++              <span className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-secondary">
++                <BookOpen className="size-8 text-primary" aria-hidden="true" />
++              </span>
++              <div className="min-w-0">
++                <p className="break-words text-lg font-bold text-foreground">
++                  E-book do curso
++                </p>
++                <p className="text-base text-muted-foreground">
++                  Leitura online, direto no navegador
++                </p>
++              </div>
++            </div>
++            <a
++              href={links.ebookUrl}
++              target="_blank"
++              rel="noopener noreferrer"
++              className={buttonClass}
++            >
++              Abrir e-book
++              <ExternalLink className="size-5" aria-hidden="true" />
++              <span className="sr-only">(abre em nova aba)</span>
++            </a>
++          </div>
++        )}
+       </div>
+     </Section>
+   )
+diff --git a/components/sections/study-path-section.tsx b/components/sections/study-path-section.tsx
+index ce40f31..dd31965 100644
+--- a/components/sections/study-path-section.tsx
++++ b/components/sections/study-path-section.tsx
+@@ -11,7 +11,7 @@ export function StudyPathSection() {
+       description="Siga as etapas na ordem abaixo. Cada uma prepara você para a próxima."
+       tone="muted"
+     >
+-      <ol className="grid gap-4 md:grid-cols-3">
++      <ol className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+         {studySteps.map((step, index) => (
+           <li key={step.title} className="flex">
+             <a
+diff --git a/lib/course-content.ts b/lib/course-content.ts
+index 9074b2e..ee784d9 100644
+--- a/lib/course-content.ts
++++ b/lib/course-content.ts
+@@ -20,12 +20,14 @@ export const course = {
+  * - youtubeUrl: cole o link do vídeo (ex.: https://www.youtube.com/watch?v=XXXX
+  *   ou https://youtu.be/XXXX). Enquanto estiver vazio, a página mostra um aviso.
+  * - evaluationUrl: cole o link da avaliação (Google Forms, Moodle etc.).
++ * - ebookUrl: link do e-book do curso (aparece na seção "Material de apoio").
+  * - supportMaterialUrl: caminho do arquivo .xlsx. Coloque o arquivo na pasta
+  *   /public/material/ com o nome abaixo, ou cole um link externo de download.
+  */
+ export const links = {
+   youtubeUrl: "https://www.youtube.com/watch?v=VAw1TzvYaGU",
+   evaluationUrl: "",
++  ebookUrl: "https://online.fliphtml5.com/gwranp/ntpy/",
+   supportMaterialUrl: "/material/material-de-apoio.xlsx",
+   supportMaterialFileName: "material-de-apoio.xlsx",
+ }
+@@ -96,6 +98,12 @@ export const studySteps = [
+       "Responda à avaliação para consolidar a aprendizagem e concluir o minicurso.",
+     targetId: "avaliacao",
+   },
++  {
++    title: "Verifique os materiais de apoio",
++    description:
++      "Consulte a planilha de apoio (.xlsx) e o e-book do curso para praticar e aprofundar o que foi estudado.",
++    targetId: "material",
++  },
+ ]
+ 
+ /**
