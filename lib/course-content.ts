@@ -81,28 +81,22 @@ export const prerequisites = [
 /** Sequência de estudo recomendada, exibida na seção "Trilha de estudo". */
 export const studySteps = [
   {
-    title: "Conheça o curso",
-    description:
-      "Leia a apresentação, os objetivos e os pré-requisitos para entender o que será trabalhado.",
-    targetId: "sobre",
-  },
-  {
     title: "Assista ao vídeo",
     description:
       "Acompanhe a explicação passo a passo sobre organização, visualização e interpretação dos dados.",
     targetId: "video",
   },
   {
+    title: "Verifique os materiais de apoio",
+    description:
+      "Consulte a planilha de apoio (.xlsx), o e-book e o infográfico interativo para praticar e aprofundar o que foi estudado.",
+    targetId: "material",
+  },
+  {
     title: "Realize a avaliação",
     description:
       "Responda à avaliação para consolidar a aprendizagem e concluir o minicurso.",
     targetId: "avaliacao",
-  },
-  {
-    title: "Verifique os materiais de apoio",
-    description:
-      "Consulte a planilha de apoio (.xlsx) e o e-book do curso para praticar e aprofundar o que foi estudado.",
-    targetId: "material",
   },
 ]
 
