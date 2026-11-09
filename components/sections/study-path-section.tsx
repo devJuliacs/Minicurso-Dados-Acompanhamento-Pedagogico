@@ -11,7 +11,7 @@ export function StudyPathSection() {
       description="Siga as etapas na ordem abaixo. Cada uma prepara você para a próxima."
       tone="muted"
     >
-      <ol className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <ol className="grid gap-4 md:grid-cols-3">
         {studySteps.map((step, index) => (
           <li key={step.title} className="flex">
             <a

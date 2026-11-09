@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
 import { course } from "@/lib/course-content"
 
 export function HeroSection() {
@@ -29,13 +28,6 @@ export function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <a
-              href="#sobre"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-lg font-bold text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
-            >
-              Conheça o curso
-              <ArrowRight className="size-5" aria-hidden="true" />
-            </a>
             <a
               href="#trilha"
               className="inline-flex w-full items-center justify-center rounded-lg border-2 border-primary px-6 py-3 text-lg font-bold text-primary transition-colors hover:bg-secondary sm:w-auto"
